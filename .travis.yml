@@ -1,0 +1,30 @@
+sudo: false
+language: node_js
+node_js:
+  - "8"
+  - lts/*
+  - node
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - yarn install
+  - yarn run flow:libdefs
+
+script:
+  - yarn run build
+  - yarn run flow:check
+  - yarn run eslint
+  - yarn run test
+
+deploy:
+  provider: npm
+  email: jakub@jirutka.cz
+  api_key:
+    secure:  # TODO
+  skip_cleanup: true
+  on:
+    tags: true
+    node_js: "8"

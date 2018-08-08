@@ -1,0 +1,97 @@
+env:
+  es6: true
+  node: true
+extends:
+  - standard
+  - plugin:flowtype/recommended
+  - plugin:import/recommended
+parser: babel-eslint
+parserOptions:
+  ecmaFeatures:
+    impliedStrict: true
+  ecmaVersion: 2017
+  sourceType: module
+plugins:
+  - flowtype
+  - import
+rules:
+  # JavaScript
+  comma-dangle: [warn, only-multiline]
+  generator-star-spacing: [error, after]
+  indent: [error, 2, {
+    SwitchCase: 1,
+    VariableDeclarator: 1,
+    outerIIFEBody: 1,
+    MemberExpression: 1,
+    # Changed parameters from 1 to off.
+    FunctionDeclaration: { parameters: off, body: 1 },
+    # Changed parameters from 1 to off.
+    FunctionExpression: { parameters: off, body: 1 },
+    # Changed arguments from 1 to off.
+    CallExpression: { arguments: off },
+    ArrayExpression: 1,
+    ObjectExpression: 1,
+    ImportDeclaration: 1,
+    flatTernaryExpressions: false,
+    ignoreComments: false,
+  }]
+  linebreak-style: [error, unix]
+  no-multi-spaces: [error, {
+    ignoreEOLComments: true,
+  }]
+  no-multiple-empty-lines: [warn, {
+    max: 2,
+    maxEOF: 1,
+    maxBOF: 1,
+  }]
+  # Replaced by flowtype/no-unused-expressions.
+  no-unused-expressions: [off]
+  no-var: [error]
+  operator-linebreak: [error, before]
+  padded-blocks: [off]
+  yield-star-spacing: [error, after]
+
+  # Flow
+  flowtype/array-style-complex-type: [error, verbose]
+  flowtype/array-style-simple-type: [error, verbose]
+  flowtype/delimiter-dangle: [warn, only-multiline]
+  flowtype/no-dupe-keys: [error]
+  flowtype/no-flow-fix-me-comments: [warn]
+  flowtype/no-primitive-constructor-types: [error]
+  flowtype/no-types-missing-file-annotation: [error]
+  flowtype/no-unused-expressions: [error, {
+    allowShortCircuit: true,
+    allowTernary: true,
+    allowTaggedTemplates: true,
+  }]
+  flowtype/no-weak-types: [warn]
+  flowtype/object-type-delimiter: [error, comma]
+  flowtype/require-parameter-type: [error, {
+    excludeArrowFunctions: true,
+    excludeParameterMatch: "^_",
+  }]
+  flowtype/require-types-at-top: [warn, always]
+  flowtype/require-valid-file-annotation: [warn, always, {
+    annotationStyle: line,
+  }]
+  flowtype/semi: [error, never]
+  flowtype/type-id-match: [error, "^([A-Z][a-z0-9]*)+$"]
+
+  # ES6 modules
+  import/no-commonjs: [error]
+  import/no-amd: [error]
+  import/first: [warn]
+  import/exports-last: [warn]
+  import/newline-after-import: [warn]
+
+overrides:
+  - files:
+      - "*.test.js"
+      - "scripts/*"
+    rules:
+      comma-spacing: [off]
+      flowtype/require-parameter-type: [off]
+      flowtype/require-valid-file-annotation: [off]
+      import/no-commonjs: [off]
+      no-multi-spaces: [off]
+      standard/array-bracket-even-spacing: [off]

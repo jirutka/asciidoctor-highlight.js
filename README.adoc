@@ -1,0 +1,18 @@
+= Asciidoctor Highlight.js
+:npm-name: asciidoctor-highlight.js
+:gh-name: jirutka/{npm-name}
+:gh-branch: master
+
+ifdef::env-github[]
+image:https://travis-ci.com/{gh-name}.svg?branch={gh-branch}[Build Status, link="https://travis-ci.com/{gh-name}"]
+image:https://img.shields.io/npm/v/{npm-name}.svg?style=flat[npm Version, link="https://www.npmjs.org/package/{npm-name}"]
+endif::env-github[]
+
+
+TODO
+
+
+== License
+
+This project is licensed under http://opensource.org/licenses/MIT/[MIT License].
+For the full text of the license, see the link:LICENSE[LICENSE] file.

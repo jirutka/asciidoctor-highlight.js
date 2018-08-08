@@ -1,0 +1,55 @@
+{
+  "name": "asciidoctor-highlight.js",
+  "version": "0.0.0",
+  "description": "Asciidoctor.js extension for highlighting code in build time using Highlight.js",
+  "author": {
+    "name": "Jakub Jirutka",
+    "email": "jakub@jirutka.cz"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/jirutka/asciidoctor-highlight.js",
+  "bugs": "https://github.com/jirutka/asciidoctor-highlight.js/issues/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jirutka/asciidoctor-highlight.js.git"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "flow-remove-types --all --out-dir lib/ src/ && ascjs lib/ lib/",
+    "clean": "rimraf lib/",
+    "eslint": "eslint src/",
+    "flow:check": "flow check src/",
+    "flow:libdefs": "flow-typed install",
+    "lint": "npm-run-all --continue-on-error --print-name --silent flow:check eslint",
+    "prepare": "npm-run-all clean build",
+    "test": "npm-run-all build test-only",
+    "test-only": "scripts/test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=8.10.0",
+    "yarn": "^1.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ascjs": "^2.4.0",
+    "babel-eslint": "^8.2.5",
+    "dedent": "^0.7.0",
+    "eslint": "^5.0.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-flowtype": "^2.49.3",
+    "eslint-plugin-import": ">=2.8.0",
+    "eslint-plugin-node": ">=5.2.1",
+    "eslint-plugin-promise": ">=3.6.0",
+    "eslint-plugin-standard": ">=3.0.1",
+    "flow-bin": "^0.75.0",
+    "flow-remove-types": "^1.2.3",
+    "flow-typed": "^2.4.0",
+    "npm-run-all": "^4.1.3",
+    "rimraf": "^2.6.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.1"
+  }
+}

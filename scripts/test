@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+const path = require('path')
+const tapSpec = require('tap-spec')
+const tape = require('tape')
+
+tape.createStream()
+  .pipe(tapSpec())
+  .pipe(process.stdout)
+
+process.argv.slice(2).forEach(file => {
+  require(path.resolve(file))
+})
