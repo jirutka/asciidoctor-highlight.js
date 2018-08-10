@@ -1,5 +1,5 @@
 // @flow
-import { Opal } from 'opal-runtime'
+declare var Opal: Object  // global variable
 
 let loaded = false
 

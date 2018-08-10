@@ -1,5 +1,5 @@
 // @flow
-import { Opal } from 'opal-runtime'
+declare var Opal: Object  // global variable
 
 // FIXME: Fake type just for documentation purposes.
 type AbstractNode = Object  // Asciidoctor::AbstractNode
