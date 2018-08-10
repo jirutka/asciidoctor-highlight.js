@@ -1,6 +1,6 @@
 {
   "name": "asciidoctor-highlight.js",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "description": "Asciidoctor.js extension for highlighting code in build time using Highlight.js",
   "author": {
     "name": "Jakub Jirutka",
