@@ -9,7 +9,87 @@ image:https://img.shields.io/npm/v/{npm-name}.svg?style=flat[npm Version, link="
 endif::env-github[]
 
 
-TODO
+This project provides an https://asciidoctor.org/docs/asciidoctor.js[Asciidoctor.js] extension for highlighting source listing blocks using https://highlightjs.org[highlight.js] right during document conversion (instead of in browser on client-side as the built-in highlight.js support).
+
+It supports all Asciidoctor features such as http://asciidoctor.org/docs/user-manual/#callouts[callouts], http://asciidoctor.org/docs/user-manual/#passthroughs[passthroughs] inside a code and all other substitutions, except highlighting of specified lines (attribute `highlight`).
+
+
+== Requirements
+
+* https://nodejs.org/[Node.js] >=8.10
+* https://www.npmjs.com/package/asciidoctor.js[asciidoctor.js] ~1.5.6
+* https://www.npmjs.com/package/highlight.js[highlight.js] ^9.0.0
+
+
+== Installation
+
+Install {npm-name} from npmjs.com:
+
+[source, sh, subs="+attributes"]
+npm install --save {npm-name}
+
+
+== Usage
+
+Assign `highlightjs-ext` to the `source-highlighter` attribute in your document’s header or via Asciidoctor.js parameters.
+
+
+=== Node.js
+
+.Using global extensions registry
+[source, js, subs="+attributes"]
+----
+// Load asciidoctor.js and {npm-name}.
+const asciidoctor = require('asciidoctor.js')()
+const highlightJsExt = require('{npm-name}')
+
+// Register the extension into global registry.
+highlightJsExt.register(asciidoctor.Extensions)
+
+// Convert the content to HTML.
+const content = `
+[source, js]
+console.log('Hello, world!')
+`
+const html = asciidoctor.convert(content, {
+  attributes: { 'source-highlighter': 'highlightjs-ext' },
+})
+console.log(html)
+----
+
+
+.Using custom extensions registry
+[source, js, subs="+attributes"]
+----
+// Load asciidoctor.js and {npm-name}.
+const asciidoctor = require('asciidoctor.js')()
+const highlightJsExt = require('{npm-name}')
+
+// Register the extension into custom registry.
+const registry = asciidoctor.Extensions.create()
+highlightJsExt.register(registry)
+
+// Convert the content to HTML.
+const content = `
+[source, js]
+console.log('Hello, world!')
+`
+const html = asciidoctor.convert(content, {
+  'extension_registry': registry,
+  attributes: { 'source-highlighter': 'highlightjs-ext' },
+})
+console.log(html)
+----
+
+
+=== Attributes
+
+You can further customize the source block output with additional highlight.js attributes:
+
+highlightjs-default-lang::
+  Controls the default source code language for fallback when the language is not specified in a source block or with attribute `source-language`.
+  It can be any language name or alias supported by highlight.js, `none` to skip highlighting, or `auto` to use highlight.js’s auto-detection.
+  The default is `none`.
 
 
 == License
