@@ -4,6 +4,9 @@ import treeProcessor from './treeProcessor'
 // FIXME: Fake type just for documentation purposes.
 type Registry = Object  // Asciidoctor::Extensions::Registry
 
+/** Version of this module. */
+export const VERSION = '0.0.0'
+
 /**
  * @param registry The extensions registry to register this extension into.
  */
