@@ -97,11 +97,23 @@ const testCases = {
     `,
   },
 
-  'Source block with attributes substitution enabled': {
+  'Source block with subs="+attributes"': {
     given: `
       :message: Hello, #{subject}!
 
       [source, ruby, subs="+attributes"]
+      puts "{message}"
+    `,
+    expected: `
+      puts <span class="hljs-string">"Hello, #{subject}!"</span>
+    `,
+  },
+
+  'Source block with subs="attributes+"': {
+    given: `
+      :message: Hello, #{subject}!
+
+      [source, ruby, subs="attributes+"]
       puts "{message}"
     `,
     expected: `

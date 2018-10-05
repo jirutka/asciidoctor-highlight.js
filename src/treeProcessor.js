@@ -33,9 +33,6 @@ function processListing (processor: Processor, block: Block): void {
 
   if (!isLanguageSupported(lang)) { return }
 
-  // Don't escape special characters, highlight.js will take care of it.
-  block.removeSubstitution('specialcharacters')
-
   let passthroughs
   if (removeSubstitution(block, 'macros')) {
     passthroughs = passthroughsSubs(processor, block)
@@ -48,8 +45,15 @@ function processListing (processor: Processor, block: Block): void {
     source = callouts.extract(source)
   }
 
-  source = block.applySubs(source, block.getSubstitutions())
-  block.subs = []
+  // Apply subs before 'specialcharacters', keep subs after 'specialcharacters'.
+  // We don't escape special characters, highlight.js will take care of it.
+  // See https://github.com/asciidoctor/asciidoctor/blob/v1.5.7.1/lib/asciidoctor/substitutors.rb#L1618-L1622
+  const subs = block.getSubstitutions()
+  const idx = subs.indexOf('specialcharacters')
+  if (idx >= 0) {
+    source = block.applySubs(source, subs.slice(0, idx))
+    subs.splice(0, idx + 1)  // remove subs until specialcharacters (incl.)
+  }
 
   let html
   if (lang === 'auto') {
