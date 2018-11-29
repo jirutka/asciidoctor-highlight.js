@@ -17,7 +17,7 @@ It supports all Asciidoctor features such as http://asciidoctor.org/docs/user-ma
 == Requirements
 
 * https://nodejs.org/[Node.js] >=8.10
-* https://www.npmjs.com/package/asciidoctor.js[asciidoctor.js] ~1.5.6
+* https://www.npmjs.com/package/asciidoctor.js[asciidoctor.js] ~1.5.9
 * https://www.npmjs.com/package/highlight.js[highlight.js] ^9.0.0
 
 

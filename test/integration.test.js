@@ -68,9 +68,9 @@ const testCases = {
       ----
     `,
     expected: `
-      local adoc = require 'asciidoctor'  <b class="conum">(1)</b>
+      local adoc = require 'asciidoctor'  -- <b class="conum">(1)</b>
 
-      print('Hello, world!')  <b class="conum">(2)</b> <b class="conum">(3)</b>
+      print('Hello, world!')  -- <b class="conum">(2)</b> <b class="conum">(3)</b>
       print('How are you?')
     `,
   },

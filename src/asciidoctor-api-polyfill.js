@@ -7,7 +7,7 @@ let loaded = false
 export default () => {
   if (loaded) { return }
 
-  const $AbstractBlock = Opal.const_get_qualified(Opal.Asciidoctor, 'AbstractBlock').$$proto
+  const $AbstractBlock = Opal.const_get_qualified(Opal.Asciidoctor, 'AbstractBlock').prototype
 
   if (!$AbstractBlock.applySubs) {
     $AbstractBlock.applySubs = function (text: string, subs: Array<string>): string {
@@ -27,7 +27,7 @@ export default () => {
     }
   }
 
-  const $Callouts = Opal.const_get_qualified(Opal.Asciidoctor, 'Callouts').$$proto
+  const $Callouts = Opal.const_get_qualified(Opal.Asciidoctor, 'Callouts').prototype
 
   if (!$Callouts.readNextId) {
     $Callouts.readNextId = function (): string {
@@ -36,7 +36,7 @@ export default () => {
   }
 
   const Table = Opal.const_get_qualified(Opal.Asciidoctor, 'Table')
-  const $Table = Table.$$proto
+  const $Table = Table.prototype
 
   if (!$Table.getRows) {
     $Table.getRows = function () {
@@ -44,7 +44,7 @@ export default () => {
     }
   }
 
-  const $Row = Opal.const_get_qualified(Table, 'Rows').$$proto
+  const $Row = Opal.const_get_qualified(Table, 'Rows').prototype
 
   if (!$Row.getBody) {
     $Row.getBody = function () {
@@ -52,7 +52,7 @@ export default () => {
     }
   }
 
-  const $Cell = Opal.const_get_qualified(Table, 'Cell').$$proto
+  const $Cell = Opal.const_get_qualified(Table, 'Cell').prototype
 
   if (!$Cell.getInnerDocument) {
     $Cell.getInnerDocument = function () {
