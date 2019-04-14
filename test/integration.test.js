@@ -1,4 +1,4 @@
-const Asciidoctor = require('asciidoctor.js')
+const Asciidoctor = require('@asciidoctor/core')
 const dedent = require('dedent')
 const test = require('tape')
 

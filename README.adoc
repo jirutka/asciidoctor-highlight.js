@@ -17,7 +17,7 @@ It supports all Asciidoctor features such as http://asciidoctor.org/docs/user-ma
 == Requirements
 
 * https://nodejs.org/[Node.js] >=8.10
-* https://www.npmjs.com/package/asciidoctor.js[asciidoctor.js] ~1.5.9
+* https://www.npmjs.com/package/@asciidoctor/core[@asciidoctor/core] ~2.0.0
 * https://www.npmjs.com/package/highlight.js[highlight.js] ^9.0.0
 
 
@@ -40,7 +40,7 @@ Assign `highlightjs-ext` to the `source-highlighter` attribute in your documentâ
 [source, js, subs="+attributes"]
 ----
 // Load asciidoctor.js and {npm-name}.
-const asciidoctor = require('asciidoctor.js')()
+const asciidoctor = require('@asciidoctor/core')()
 const highlightJsExt = require('{npm-name}')
 
 // Register the extension into global registry.
@@ -62,7 +62,7 @@ console.log(html)
 [source, js, subs="+attributes"]
 ----
 // Load asciidoctor.js and {npm-name}.
-const asciidoctor = require('asciidoctor.js')()
+const asciidoctor = require('@asciidoctor/core')()
 const highlightJsExt = require('{npm-name}')
 
 // Register the extension into custom registry.
