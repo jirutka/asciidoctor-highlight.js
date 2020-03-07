@@ -1,6 +1,8 @@
 sudo: false
 language: node_js
 node_js:
+  - "12"
+  - "10"
   - "8"
   - lts/*
   - node
@@ -27,4 +29,4 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-    node_js: "8"
+    node_js: "12"
