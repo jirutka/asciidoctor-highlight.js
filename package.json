@@ -31,6 +31,13 @@
     "test": "npm-run-all build test-only",
     "test-only": "scripts/test test/*.test.js"
   },
+  "keywords": [
+    "asciidoctor",
+    "asciidoc",
+    "extension",
+    "highlightjs",
+    "syntax-highlighting"
+  ],
   "engines": {
     "node": ">=8.10.0",
     "yarn": "^1.0.0"
