@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@asciidoctor/core@~2.0.0":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@asciidoctor/core/-/core-2.0.3.tgz#95630424eb2e346acc51dede1e6599159fbd5d44"
-  integrity sha512-iN0zV/tsL36nTltJyk5IdcRqDW34HHiwb9PrgSoTGDCIEML6C3HYnJOQi+jKq7A//Gt1nL1SHohaCHkyw3swEg==
+"@asciidoctor/core@>=2.0.0 <2.2.0":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@asciidoctor/core/-/core-2.1.1.tgz#23af789f2b630b88ebb6ef31dc76dfaca5f4430c"
+  integrity sha512-yzV8GvrVUZst/lAlDvvEWY9Na9YhevE7PE3k1SvtQNyJEnpTWoKHrPG3soQ95nPM4oh2USMjpKDh4cEbvIRZpw==
   dependencies:
     asciidoctor-opal-runtime "0.3.0"
     unxhr "1.0.1"
