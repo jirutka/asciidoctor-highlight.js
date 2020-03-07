@@ -15,16 +15,19 @@
   },
   "main": "lib/index.js",
   "files": [
-    "lib"
+    "lib",
+    "README.md"
   ],
   "scripts": {
     "build": "flow-remove-types --all --out-dir lib/ src/ && ascjs lib/ lib/",
-    "clean": "rimraf lib/",
+    "clean": "rimraf lib/ README.md",
     "eslint": "eslint src/",
     "flow:check": "flow check src/",
     "flow:libdefs": "flow-typed install",
     "lint": "npm-run-all --continue-on-error --print-name --silent flow:check eslint",
     "prepare": "npm-run-all clean build",
+    "prepublishOnly": "run-s readme2md",
+    "readme2md": "asciidoctor -o - -b docbook README.adoc | pandoc -f docbook -t markdown_github --base-header-level 2 -o README.md",
     "test": "npm-run-all build test-only",
     "test-only": "scripts/test test/*.test.js"
   },

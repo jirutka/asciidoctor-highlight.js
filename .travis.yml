@@ -7,6 +7,12 @@ node_js:
   - lts/*
   - node
 
+addons:
+  apt:
+    packages:
+      - asciidoctor
+      - pandoc
+
 cache:
   directories:
     - node_modules
@@ -20,6 +26,7 @@ script:
   - yarn run flow:check
   - yarn run eslint
   - yarn run test
+  - yarn run readme2md
 
 deploy:
   provider: npm
