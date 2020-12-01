@@ -43,7 +43,7 @@ const testCases = {
       puts 'Hello, world!'
     `,
     expected: `
-      <span class="hljs-attribute">puts</span> <span class="hljs-string">'Hello, world!'</span>
+      <span class="hljs-attribute">puts</span> <span class="hljs-string">&#x27;Hello, world!&#x27;</span>
     `,
   },
 
@@ -81,7 +81,7 @@ const testCases = {
       puts 'Hello, world!'
     `,
     expected: `
-      puts <span class="hljs-string">'Hello, world!'</span>
+      puts <span class="hljs-string">&#x27;Hello, world!&#x27;</span>
     `,
   },
 
@@ -93,7 +93,7 @@ const testCases = {
       puts 'Hello, world!'
     `,
     expected: `
-      puts <span class="hljs-string">'Hello, world!'</span>
+      puts <span class="hljs-string">&#x27;Hello, world!&#x27;</span>
     `,
   },
 
@@ -105,7 +105,7 @@ const testCases = {
       puts "{message}"
     `,
     expected: `
-      puts <span class="hljs-string">"Hello, #{subject}!"</span>
+      puts <span class="hljs-string">&quot;Hello, #{subject}!&quot;</span>
     `,
   },
 
@@ -117,7 +117,7 @@ const testCases = {
       puts "{message}"
     `,
     expected: `
-      puts <span class="hljs-string">"Hello, <span class="hljs-subst">#{subject}</span>!"</span>
+      puts <span class="hljs-string">&quot;Hello, <span class="hljs-subst">#{subject}</span>!&quot;</span>
     `,
   },
 
@@ -132,10 +132,10 @@ const testCases = {
       ----
     `,
     expected: `
-      <span class="hljs-keyword">require</span> <span class="hljs-string">'asciidoctor'</span>  <b class="conum">(1)</b>
+      <span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;asciidoctor&#x27;</span>  <b class="conum">(1)</b>
 
-      puts <span class="hljs-string">'Hello, world!'</span>    &lt;<span class="hljs-number">3</span>&gt;<b class="conum">(2)</b>
-      puts <span class="hljs-string">'How are you?'</span>
+      puts <span class="hljs-string">&#x27;Hello, world!&#x27;</span>    &lt;<span class="hljs-number">3</span>&gt;<b class="conum">(2)</b>
+      puts <span class="hljs-string">&#x27;How are you?&#x27;</span>
     `,
   },
 
@@ -145,7 +145,7 @@ const testCases = {
       puts '+++<strong>Oh hai!</strong>+++'
     `,
     expected: `
-      puts <span class="hljs-string">'<strong>Oh hai!</strong>'</span>
+      puts <span class="hljs-string">&#x27;<strong>Oh hai!</strong>&#x27;</span>
     `,
   },
 }
@@ -177,7 +177,7 @@ test('Source block inside a table cell', t => {
     .getRows().getBody()[1][0]  // cell
     .getInnerDocument().getBlocks()[0]  // listing
     .getContent()
-  const expected = 'puts <span class="hljs-string">"Hello from table!"</span>'
+  const expected = 'puts <span class="hljs-string">&quot;Hello from table!&quot;</span>'
 
   t.isEqual(actual, expected, `should render: ${expected}`)
   t.end()
