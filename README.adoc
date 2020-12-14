@@ -14,14 +14,6 @@ This project provides an https://asciidoctor.org/docs/asciidoctor.js[Asciidoctor
 
 It supports all Asciidoctor features such as http://asciidoctor.org/docs/user-manual/#callouts[callouts], http://asciidoctor.org/docs/user-manual/#passthroughs[passthroughs] inside a code and all other substitutions, except highlighting of specified lines (attribute `highlight`).
 
-
-== Requirements
-
-* https://nodejs.org/[Node.js] >=8.10
-* https://www.npmjs.com/package/@asciidoctor/core[@asciidoctor/core] >=2.0.0 <2.2.0
-* https://www.npmjs.com/package/highlight.js[highlight.js] ^10.0.0
-
-
 == Installation
 
 Install {npm-name} from npmjs.com:
