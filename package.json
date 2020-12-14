@@ -1,17 +1,17 @@
 {
-  "name": "asciidoctor-highlight.js",
-  "version": "0.2.1",
+  "name": "asciidoctor-highlightjs",
+  "version": "0.0.1",
   "description": "Asciidoctor.js extension for highlighting code in build time using Highlight.js",
   "author": {
-    "name": "Jakub Jirutka",
-    "email": "jakub@jirutka.cz"
+    "name": "Carlos Martín Sánchez",
+    "email": "carlosvin@gmail.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/jirutka/asciidoctor-highlight.js",
-  "bugs": "https://github.com/jirutka/asciidoctor-highlight.js/issues/",
+  "homepage": "https://github.com/carlosvin/asciidoctor-highlight.js",
+  "bugs": "https://github.com/carlosvin/asciidoctor-highlight.js/issues/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jirutka/asciidoctor-highlight.js.git"
+    "url": "https://github.com/carlosvin/asciidoctor-highlight.js.git"
   },
   "main": "lib/index.js",
   "files": [
@@ -36,6 +36,7 @@
     "asciidoc",
     "extension",
     "highlightjs",
+    "highlight.js",
     "syntax-highlighting"
   ],
   "engines": {
@@ -43,7 +44,7 @@
     "yarn": "^1.0.0"
   },
   "dependencies": {
-    "highlight.js": "^10.4.0"
+    "highlight.js": "^10.4.1"
   },
   "devDependencies": {
     "@asciidoctor/core": "^2",

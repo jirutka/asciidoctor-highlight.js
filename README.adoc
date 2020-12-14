@@ -1,10 +1,11 @@
-= Asciidoctor Highlight.js
-:npm-name: asciidoctor-highlight.js
-:gh-name: jirutka/{npm-name}
+= Asciidoctor Highlight.js Extension
+:npm-name: asciidoctor-highlightjs
+:gh-name: carlosvin/{npm-name}
 :gh-branch: master
 
+Project forked from https://github.com/jirutka/asciidoctor-highlight.js.
+
 ifdef::env-github[]
-image:https://travis-ci.com/{gh-name}.svg?branch={gh-branch}[Build Status, link="https://travis-ci.com/{gh-name}"]
 image:https://img.shields.io/npm/v/{npm-name}.svg?style=flat[npm Version, link="https://www.npmjs.org/package/{npm-name}"]
 endif::env-github[]
 
@@ -18,7 +19,7 @@ It supports all Asciidoctor features such as http://asciidoctor.org/docs/user-ma
 
 * https://nodejs.org/[Node.js] >=8.10
 * https://www.npmjs.com/package/@asciidoctor/core[@asciidoctor/core] >=2.0.0 <2.2.0
-* https://www.npmjs.com/package/highlight.js[highlight.js] ^9.0.0
+* https://www.npmjs.com/package/highlight.js[highlight.js] ^10.0.0
 
 
 == Installation
@@ -37,7 +38,7 @@ Assign `highlightjs-ext` to the `source-highlighter` attribute in your documentâ
 === Node.js
 
 .Using global extensions registry
-[source, js, subs="+attributes"]
+[source,js,subs="+attributes"]
 ----
 // Load asciidoctor.js and {npm-name}.
 const asciidoctor = require('@asciidoctor/core')()
