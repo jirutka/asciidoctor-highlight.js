@@ -7,11 +7,11 @@
     "email": "carlosvin@gmail.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/carlosvin/asciidoctor-highlight.js",
-  "bugs": "https://github.com/carlosvin/asciidoctor-highlight.js/issues/",
+  "homepage": "https://github.com/carlosvin/asciidoctor-highlightjs",
+  "bugs": "https://github.com/carlosvin/asciidoctor-highlightjs/issues/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/carlosvin/asciidoctor-highlight.js.git"
+    "url": "https://github.com/carlosvin/asciidoctor-highlightjs.git"
   },
   "main": "lib/index.js",
   "files": [
@@ -24,6 +24,7 @@
     "eslint": "eslint src/",
     "flow:check": "flow check src/",
     "flow:libdefs": "flow-typed install",
+    "postinstall": "npm-run-all flow:libdefs",
     "lint": "npm-run-all --continue-on-error --print-name --silent flow:check eslint",
     "prepare": "npm-run-all clean build",
     "prepublishOnly": "run-s readme2md",
@@ -48,26 +49,24 @@
   },
   "devDependencies": {
     "@asciidoctor/core": "^2",
-    "ascjs": "^3.1.2",
+    "ascjs": "^4.0.3",
     "babel-eslint": "^10.1.0",
     "dedent": "^0.7.0",
-    "eslint": "^6.8.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-flowtype": "^4.6.0",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-promise": "^4.1.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "flow-bin": "^0.120.1",
-    "flow-remove-types": "^2.120.1",
+    "eslint": "^7.15.0",
+    "eslint-plugin-flowtype": "^5.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "flow-bin": "^0.140.0",
+    "flow-remove-types": "^2.140.0",
     "flow-typed": "^2.6.2",
-    "npm-run-all": "^4.1.3",
-    "opal-runtime": "1.0.14",
+    "npm-run-all": "^4.1.5",
+    "opal-runtime": "2.0.0-alpha.2",
     "rimraf": "^3.0.2",
     "tap-spec": "^5.0.0",
-    "tape": "^4.13.2"
+    "tape": "^5.0.1"
   },
   "peerDependencies": {
-    "@asciidoctor/core": ">=2.0.0 <2.2.0"
+    "@asciidoctor/core": "^2"
   }
 }
