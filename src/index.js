@@ -5,7 +5,7 @@ import treeProcessor from './treeProcessor'
 type Registry = Object  // Asciidoctor::Extensions::Registry
 
 /** Version of this module. */
-export const VERSION = '0.2.1'
+export const VERSION = '0.3.0'
 
 /**
  * @param registry The extensions registry to register this extension into.
