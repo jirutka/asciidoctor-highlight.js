@@ -1,11 +1,11 @@
-= Asciidoctor Highlight.js Extension
-:npm-name: asciidoctor-highlightjs
-:gh-name: carlosvin/{npm-name}
-:gh-branch: master
+= Asciidoctor Highlight.js
+:npm-name: asciidoctor-highlight.js
+:gh-name: jirutka/{npm-name}
 
 Project forked from https://github.com/jirutka/asciidoctor-highlight.js.
 
 ifdef::env-github[]
+image:https://github.com/{gh-name}/workflows/CI/badge.svg[CI Status, link=https://github.com/{gh-name}/actions?query=workflow%3A%22CI%22]
 image:https://img.shields.io/npm/v/{npm-name}.svg?style=flat[npm Version, link="https://www.npmjs.org/package/{npm-name}"]
 endif::env-github[]
 
@@ -13,6 +13,14 @@ endif::env-github[]
 This project provides an https://asciidoctor.org/docs/asciidoctor.js[Asciidoctor.js] extension for highlighting source listing blocks using https://highlightjs.org[highlight.js] right during document conversion (instead of in browser on client-side as the built-in highlight.js support).
 
 It supports all Asciidoctor features such as http://asciidoctor.org/docs/user-manual/#callouts[callouts], http://asciidoctor.org/docs/user-manual/#passthroughs[passthroughs] inside a code and all other substitutions, except highlighting of specified lines (attribute `highlight`).
+
+
+== Requirements
+
+* https://nodejs.org/[Node.js] >=8.10
+* https://www.npmjs.com/package/@asciidoctor/core[@asciidoctor/core] >=2.0.0 <2.3.0
+* https://www.npmjs.com/package/highlight.js[highlight.js] ^10.7.0
+
 
 == Installation
 
