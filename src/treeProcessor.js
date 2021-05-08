@@ -61,7 +61,7 @@ function processListing (processor: Processor, block: Block): void {
     block.setAttribute('language', result.language)
     html = result.value
   } else {
-    html = hjs.highlight(lang, source, true).value
+    html = hjs.highlight(source, { language: lang, ignoreIllegals: true }).value
   }
 
   if (passthroughs) {
