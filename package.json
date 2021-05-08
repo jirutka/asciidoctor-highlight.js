@@ -19,7 +19,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "flow-remove-types --all --out-dir lib/ src/ && ascjs lib/ lib/",
+    "build": "flow-remove-types --all --out-dir lib/ src/",
     "clean": "rimraf lib/ README.md",
     "eslint": "eslint src/",
     "flow:check": "flow check src/",
@@ -47,7 +47,6 @@
   },
   "devDependencies": {
     "@asciidoctor/core": ">=2.0.0 <2.3.0",
-    "ascjs": "^3.1.2",
     "babel-eslint": "^10.1.0",
     "dedent": "^0.7.0",
     "eslint": "^6.8.0",
