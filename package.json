@@ -67,6 +67,6 @@
     "tape": "^4.13.2"
   },
   "peerDependencies": {
-    "@asciidoctor/core": ">=2.0.0 <2.2.0"
+    "@asciidoctor/core": ">=2.0.0 <2.3.0"
   }
 }
