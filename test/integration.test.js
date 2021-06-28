@@ -139,6 +139,24 @@ const testCases = {
     `,
   },
 
+  'Source block with callouts with line-comment option': {
+    given: `
+      [source, ruby, line-comment=%]
+      ----
+      require 'asciidoctor'  % <1>
+
+      puts 'Hello, world!'   % <2> <3>
+      puts 'How are you?'
+      ----
+    `,
+    expected: `
+      <span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;asciidoctor&#x27;</span>  <b class="conum">(1)</b>
+
+      puts <span class="hljs-string">&#x27;Hello, world!&#x27;</span>    <b class="conum">(2)</b> <b class="conum">(3)</b>
+      puts <span class="hljs-string">&#x27;How are you?&#x27;</span>
+    `,
+  },
+
   'Source block with passthrough and macros substitution enabled': {
     given: `
       [source, ruby, subs="macros"]
