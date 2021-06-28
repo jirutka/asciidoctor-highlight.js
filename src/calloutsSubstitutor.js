@@ -9,7 +9,7 @@ type Processor = Object  // Asciidoctor::Extensions::Processor
 const ESCAPE_CHAR = '\\'
 
 // Copied from Asciidoctor::CalloutExtractRx
-const EXTRACT_RX = /(?:(?:\/\/|#|--|;;) ?)?(\\)?<!?(|--)(\d+)\2>(?=(?: ?\\?<!?\2\d+\2>)*$)/
+const EXTRACT_RX = /(?:(?:\/\/|#|--|;;) ?)?(\\)?<!?(|--)(\d+)\2>(?=(?: ?\\?<!?\2\d+\2>)*$)/g
 
 // Copied from Asciidoctor::CalloutExtractRxt
 const EXTRACT_RXT = '(\\\\)?<()(\\d+)>(?=(?: ?\\\\?<\\d+>)*$)'
@@ -23,7 +23,7 @@ export default (processor: Processor, node: AbstractNode) => {
   let docCallouts
 
   const calloutRx = lineComment
-    ? new RegExp(`(?:${regexpEscape(lineComment)} )?${EXTRACT_RXT}`)
+    ? new RegExp(`(?:${regexpEscape(lineComment)} )?${EXTRACT_RXT}`, 'g')
     : EXTRACT_RX
 
   /**

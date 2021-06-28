@@ -134,7 +134,7 @@ const testCases = {
     expected: `
       <span class="hljs-keyword">require</span> <span class="hljs-string">&#x27;asciidoctor&#x27;</span>  <b class="conum">(1)</b>
 
-      puts <span class="hljs-string">&#x27;Hello, world!&#x27;</span>    &lt;<span class="hljs-number">3</span>&gt;<b class="conum">(2)</b>
+      puts <span class="hljs-string">&#x27;Hello, world!&#x27;</span>    <b class="conum">(2)</b> <b class="conum">(3)</b>
       puts <span class="hljs-string">&#x27;How are you?&#x27;</span>
     `,
   },
