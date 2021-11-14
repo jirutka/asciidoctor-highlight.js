@@ -2071,14 +2071,6 @@ onetime@^5.1.0:
   dependencies:
     mimic-fn "^2.1.0"
 
-opal-runtime@1.0.14:
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/opal-runtime/-/opal-runtime-1.0.14.tgz#9063b97aef974eb19b4ced0a6cb4a91099fb4a51"
-  integrity sha512-WP+jW3gMgTIpX/AKs23ZYCYLf0/lSyx3djXdPvWNu6S7mep5x0qytAqTRNGY5ki2X8h6++QWLNsUcyWc8ikK+w==
-  dependencies:
-    glob "7.1.3"
-    unxhr "1.0.1"
-
 optionator@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/optionator/-/optionator-0.8.3.tgz#84fa1d036fe9d3c7e21d99884b601167ec8fb495"
