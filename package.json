@@ -64,7 +64,7 @@
     "opal-runtime": "1.0.14",
     "rimraf": "^3.0.2",
     "tap-spec": "^5.0.0",
-    "tape": "^4.13.2"
+    "tape": "^5.3.1"
   },
   "peerDependencies": {
     "@asciidoctor/core": ">=2.0.0 <2.3.0"
