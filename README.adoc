@@ -17,7 +17,7 @@ It supports all Asciidoctor features such as http://asciidoctor.org/docs/user-ma
 
 * https://nodejs.org/[Node.js] >=8.10 footnote:[Node versions older than 12.0.0 are not tested since 0.4.0.]
 * https://www.npmjs.com/package/@asciidoctor/core[@asciidoctor/core] >=2.0.0 <2.3.0
-* https://www.npmjs.com/package/highlight.js[highlight.js] ^10.7.0
+* https://www.npmjs.com/package/highlight.js[highlight.js] >=10.7.0 <12.0.0
 
 
 == Installation
